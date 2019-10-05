@@ -1,27 +1,33 @@
 package com.company;
-
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
         String[] names = {"Nika", "Bermet", "Aigerym"};
-        for (int name = 0; name < 3; name++) {
-            switch (name){
-                case 0:
+        names = addElement(names, "Marat");
+
+        for (String name : names) {
+            switch (name) {
+                case "Nika":
                     System.out.println("Доброе утро " + names[0]);
                     break;
-                case 1:
+                case "Bermet":
                     System.out.println("Добрый день " + names[1]);
                     break;
-                case 2:
+                case "Aigerym":
                     System.out.println("Добрый вечер " + names[2]);
+                    break;
+                case "Marat":
+                    System.out.println("Cпокойной ночи " + names[3]);
                     break;
             }
         }
+    }
 
+    static String[] addElement(String[] a, String e) {
+        a = Arrays.copyOf(a, a.length + 1);
+        a[a.length - 1] = e;
+        return a;
     }
 }
-
-
